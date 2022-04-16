@@ -1,0 +1,284 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ReadingIsGood",
+		"_postman_id": "938b109e-988d-3d4b-c6d9-436daa5930da",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"url": "http://localhost:8080/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "book/create",
+			"request": {
+				"url": "localhost:8080/book/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MDExODMxMywiZXhwIjoxNjUxNDE0MzEzfQ.XdQpf3MUsjWuX4v7kPeL0Wa1TLlLiS1Eh53pWwnf9Jc",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"author\": \"Batuhan GÖKTAŞ\",\r\n  \"name\": \"Kitap 1\",\r\n  \"price\": 10,\r\n  \"stock\": 5\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "book/update",
+			"request": {
+				"url": "localhost:8080/book/update/stock/407152a5-a8a4-470d-a558-ce145a16d9b5",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MDExODMxMywiZXhwIjoxNjUxNDE0MzEzfQ.XdQpf3MUsjWuX4v7kPeL0Wa1TLlLiS1Eh53pWwnf9Jc",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "stock",
+							"value": "60",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "customer/create",
+			"request": {
+				"url": "localhost:8080/customer/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MDExODMxMywiZXhwIjoxNjUxNDE0MzEzfQ.XdQpf3MUsjWuX4v7kPeL0Wa1TLlLiS1Eh53pWwnf9Jc",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"batuhangoktas@hotmail.com\",\r\n  \"password\":\"123456\",\r\n  \"id\": \"string\",\r\n  \"name\": \"Batuhan GÖKTAŞ\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "customer/orders",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/customer/orders/609bbeaa-36f1-4ac8-aee3-de87ab2b2f4a?offset=0&pagesize=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"orders",
+						"609bbeaa-36f1-4ac8-aee3-de87ab2b2f4a"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pagesize",
+							"value": "5",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MDExODMxMywiZXhwIjoxNjUxNDE0MzEzfQ.XdQpf3MUsjWuX4v7kPeL0Wa1TLlLiS1Eh53pWwnf9Jc",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"createDate\": \"2022-04-15T14:03:34.821Z\",\r\n  \"email\": \"batuhangoktas@gmail.com\",\r\n  \"id\": \"string\",\r\n  \"name\": \"BatuhanGöktaş\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "order/create",
+			"request": {
+				"url": "localhost:8080/order/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MDExODMxMywiZXhwIjoxNjUxNDE0MzEzfQ.XdQpf3MUsjWuX4v7kPeL0Wa1TLlLiS1Eh53pWwnf9Jc",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookOrderList\": [\r\n    {\r\n      \"bookId\": \"8eeaf5f5-d010-4c54-9d6f-976a98a42a90\",\r\n      \"piece\": 2\r\n    },\r\n    {\r\n\t   \"bookId\": \"407152a5-a8a4-470d-a558-ce145a16d9b5\",\r\n\t   \"piece\": 1\r\n    }\r\n  ],\r\n  \"customerId\": \"609bbeaa-36f1-4ac8-aee3-de87ab2b2f4a\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "order/detail",
+			"request": {
+				"url": "localhost:8080/order/detail/649b973e-f735-4252-a689-d42efc4aa84a",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MDExODMxMywiZXhwIjoxNjUxNDE0MzEzfQ.XdQpf3MUsjWuX4v7kPeL0Wa1TLlLiS1Eh53pWwnf9Jc",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookOrderList\": [\r\n    {\r\n      \"bookId\": \"38f98d57-2f31-4a2f-97b9-247cdd894bb0\",\r\n      \"piece\": 2\r\n    },\r\n    {\r\n\t   \"bookId\": \"8b96a34d-03f4-48d7-af8f-5b844203e379\",\r\n\t   \"piece\": 3\r\n    }\r\n  ],\r\n  \"customerId\": \"5892efca-923c-4b85-b4e7-3f488cf9bc86\",\r\n  \"id\": \"string\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "order/list",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/order/list?startDate=2022-04-15T01:30:00.000&endDate=2022-04-25T18:59:00.000",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"list"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2022-04-15T01:30:00.000",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "endDate",
+							"value": "2022-04-25T18:59:00.000",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MDExODMxMywiZXhwIjoxNjUxNDE0MzEzfQ.XdQpf3MUsjWuX4v7kPeL0Wa1TLlLiS1Eh53pWwnf9Jc",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookOrderList\": [\r\n    {\r\n      \"bookId\": \"38f98d57-2f31-4a2f-97b9-247cdd894bb0\",\r\n      \"piece\": 2\r\n    },\r\n    {\r\n\t   \"bookId\": \"8b96a34d-03f4-48d7-af8f-5b844203e379\",\r\n\t   \"piece\": 3\r\n    }\r\n  ],\r\n  \"customerId\": \"5892efca-923c-4b85-b4e7-3f488cf9bc86\",\r\n  \"id\": \"string\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "statistics/monthly",
+			"request": {
+				"url": "localhost:8080/statistics/monthly/609bbeaa-36f1-4ac8-aee3-de87ab2b2f4a",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MDExODMxMywiZXhwIjoxNjUxNDE0MzEzfQ.XdQpf3MUsjWuX4v7kPeL0Wa1TLlLiS1Eh53pWwnf9Jc",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookOrderList\": [\r\n    {\r\n      \"bookId\": \"38f98d57-2f31-4a2f-97b9-247cdd894bb0\",\r\n      \"piece\": 2\r\n    },\r\n    {\r\n\t   \"bookId\": \"8b96a34d-03f4-48d7-af8f-5b844203e379\",\r\n\t   \"piece\": 3\r\n    }\r\n  ],\r\n  \"customerId\": \"5892efca-923c-4b85-b4e7-3f488cf9bc86\",\r\n  \"id\": \"string\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

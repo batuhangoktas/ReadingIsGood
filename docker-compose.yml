@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  readingisgood_container:
+    image: readingisgood:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb_container
+    environment:
+      spring.data.mongodb.uri: mongodb://mongodb_container:27017/readingisgood
+
+  mongodb_container:
+    image: mongo:5.0
+    environment:
+      MONGO_INITDB_DATABASE: readingisgood
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
