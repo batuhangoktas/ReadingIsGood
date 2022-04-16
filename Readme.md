@@ -53,6 +53,9 @@ Swagger can be used for api specification can be accessed at the following URL -
 ```
 http://localhost:8080/swagger-ui/index.html#
 ```
+## Postman Collection
+- [ReadingIsGood.postman_collection.json](https://github.com/batuhangoktas/ReadingIsGood/blob/master/postman/ReadingIsGood.postman_collection.json)
+![](https://github.com/batuhangoktas/ReadingIsGood/blob/master/postman/collection.jpg)
 ## Unit Test
 
 There are multiple unit test cases written to cover the different components of the application. 
