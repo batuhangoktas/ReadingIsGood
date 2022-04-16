@@ -34,6 +34,10 @@ Detailed API specification for other services is available in the swagger interf
 
 In this project, application and mongodb are dockerized.
 
+```
+mvn clean package
+```
+
 **Dockerfile**
 
 To create an image of the application use -
